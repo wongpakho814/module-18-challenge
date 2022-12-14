@@ -52,4 +52,8 @@ module.exports = {
       .then(() => res.json({ message: "User and it's associated thoughts deleted!" }))
       .catch((err) => res.status(500).json(err));
   },
+  // Add a new friend to a user's friend list
+  addFriend(req, res) {
+    
+  }
 };
