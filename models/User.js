@@ -32,18 +32,15 @@ const userSchema = new Schema(
         ref: "User",
       },
     ],
-    createdAt: {
-      type: Date,
-      default: Date.now,
-    },
   },
   {
     toJSON: {
-      getters: true,
       virtuals: true,
     },
     id: false,
   }
 );
 
-module.exports = userSchema;
+const User = model("user", userSchema);
+
+module.exports = User;
