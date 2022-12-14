@@ -7,7 +7,7 @@ module.exports = {
       .then((users) => res.json(users))
       .catch((err) => res.status(500).json(err));
   },
-  // Get a user
+  // Get a user by ID
   getSingleUser(req, res) {
     User.findOne({ _id: req.params.userId })
       .select("-__v")
@@ -41,7 +41,7 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
-  // Delete a user
+  // Delete a user by ID
   deleteUser(req, res) {
     User.findOneAndDelete({ _id: req.params.userId })
       .then((user) =>
