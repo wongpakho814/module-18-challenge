@@ -1,5 +1,14 @@
 const { Schema, Types } = require("mongoose");
 
+var options = {
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+};
+
+var currTime = new Date();
+currTime = currTime.toLocaleDateString("en-US", options);
+
 const reactionSchema = new Schema(
   {
     reactionId: {
@@ -16,8 +25,8 @@ const reactionSchema = new Schema(
       required: true,
     },
     createdAt: {
-      type: Date,
-      default: Date.now,
+      type: String,
+      default: currTime,
     },
   },
   {
