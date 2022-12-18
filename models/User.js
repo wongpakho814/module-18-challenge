@@ -1,4 +1,4 @@
-const { Schema, Types } = require("mongoose");
+const { Schema, model } = require("mongoose");
 
 // Code referenced from https://stackoverflow.com/questions/18022365/mongoose-validate-email-syntax
 var validateEmail = function (email) {
@@ -40,6 +40,10 @@ const userSchema = new Schema(
     id: false,
   }
 );
+
+userSchema.virtual("friendCount").get(function () {
+  return this.friends.length;
+});
 
 const User = model("user", userSchema);
 
