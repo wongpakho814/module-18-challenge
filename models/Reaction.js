@@ -4,6 +4,8 @@ var options = {
   year: "numeric",
   month: "short",
   day: "numeric",
+  hour: "numeric",
+  minute: "numeric",
 };
 
 var currTime = new Date();

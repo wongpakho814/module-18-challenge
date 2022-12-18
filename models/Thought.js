@@ -4,7 +4,9 @@ const reactionSchema = require("./Reaction");
 var options = {
   year: "numeric",
   month: "short",
-  day: "numeric"
+  day: "numeric",
+  hour: "numeric",
+  minute: "numeric"
 };
 
 var currTime = new Date();
