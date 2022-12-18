@@ -1,6 +1,15 @@
 const { Schema, model } = require("mongoose");
 const reactionSchema = require("./Reaction");
 
+var options = {
+  year: "numeric",
+  month: "short",
+  day: "numeric"
+};
+
+var currTime = new Date();
+currTime = currTime.toLocaleDateString("en-US", options);
+
 const thoughtSchema = new Schema(
   {
     thoughtText: {
@@ -10,8 +19,8 @@ const thoughtSchema = new Schema(
       minlength: 1,
     },
     createdAt: {
-      type: Date,
-      default: Date.now,
+      type: String,
+      default: currTime,
     },
     username: {
       type: String,
